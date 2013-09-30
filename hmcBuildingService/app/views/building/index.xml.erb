@@ -1,15 +1,25 @@
 <%# params.each_with_index do |param, index| %>
 
 
+<%#= @buildings.to_plist %>
+<array>
 <% @buildings.each do |b| %>
-  <building>
-    <%= b.name %>
-  </building>
+  <dict>
+    <% b.attributes.each do |b| %>
+      <key>
+        <%= b.first %>
+      </key>
+      <<%= plist_type(b.second) %>>
+       <%= b.second %>
+      </<%= plist_type(b.second) %>>
+    <% end %>
+  </dict>
 <% end %>
+</array>
 
-<% params.each do |p|%>
-<%= p.to_s.html_safe %>
-<% end %>
+<%# params.each do |p|%>
+<%#= p.to_s.html_safe %>
+<%# end %>
 
 
 <%# end %>
