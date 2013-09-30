@@ -14,10 +14,11 @@
 ActiveRecord::Schema.define(version: 20130927214553) do
 
   create_table "buildings", force: true do |t|
-    t.decimal  "latitude",   precision: 6, scale: 4
-    t.decimal  "longitude",  precision: 6, scale: 4
+    t.decimal  "latitude",    precision: 12, scale: 8,               null: false
+    t.decimal  "longitude",   precision: 12, scale: 8,               null: false
+    t.decimal  "altitude",    precision: 12, scale: 8, default: 0.0
     t.string   "name"
-    t.string   "code"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,10 +1,11 @@
 class CreateBuildings < ActiveRecord::Migration
   def change
     create_table :buildings do |t|
-      t.decimal :latitude, :precision => 6, :scale => 4
-      t.decimal :longitude, :precision => 6, :scale => 4
+      t.decimal :latitude, :precision => 12, :scale => 8, :null => false
+      t.decimal :longitude, :precision => 12, :scale => 8, :null => false
+      t.decimal :altitude, :precision => 12, :scale => 8, :default => 0
       t.string :name
-      t.string :code
+      t.text :description
 
       t.timestamps
     end

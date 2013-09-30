@@ -15,6 +15,8 @@ Team members:
 Our services for aerospace clinic project 2013 will be hosted and
 developed using Ruby on Rails.
 
+Guides for Ruby: http://guides.rubyonrails.org/
+
 Ruby Verion Manager: 1.22.10
 Ruby:  2.0.0
 Rails: 4.0.0
@@ -45,6 +47,8 @@ dlopen(/Users/alejandrofrias/.rvm/gems/ruby-2.0.0-p247/gems/mysql2-0.3.13/lib/my
   Referenced from: /Users/alejandrofrias/.rvm/gems/ruby-2.0.0-p247/gems/mysql2-0.3.13/lib/mysql2/mysql2.bundle
   Reason: image not found - /Users/alejandrofrias/.rvm/gems/ruby-2.0.0-p247/gems/mysql2-0.3.13/lib/mysql2/mysql2.bundle
 
+Use wifi Claremont-ETC (password: bbccddeeff) for local testing.
+
 How to use/setup MySQL Workbench:
  SETUP:
   1. First make sure MySQl server is running in System Preferences (at the bottom).
@@ -55,5 +59,3 @@ How to use/setup MySQL Workbench:
   1. You should see the available databases on the left, under SCHEMAS.
   2. In the main SQL file type "use database_name;" where database_name is the name of the development database you see available (which is hmcBuildingService_development if you are using that)
   3. COMMAND + ENTER or the lighting icons will run any mysql commands you enter. You can even edit the table that pops up from a SELECT query and it will create the correct SQL commands to incorporate the change and let you run them. This includes creating/deleting rows (or entries)
-
-Guides for Ruby: http://guides.rubyonrails.org/

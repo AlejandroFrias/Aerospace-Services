@@ -7,5 +7,9 @@
   </building>
 <% end %>
 
+<% params.each do |p|%>
+<%= p.to_s.html_safe %>
+<% end %>
+
 
 <%# end %>
