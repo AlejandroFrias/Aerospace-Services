@@ -18,7 +18,7 @@ developed using Ruby on Rails.
 Provided Services:
 
   1. A list of buildings given lat, long, and range:
-    hmcbuildings.herokuapp.com/?latitude=YOUR_LAT&longitude=YOUR_LONG&range=YOUR_RANGE
+    hmcbuildingservice.herokuapp.com/?latitude=YOUR_LAT&longitude=YOUR_LONG&range=YOUR_RANGE
 
 SETUP instruction:
 
