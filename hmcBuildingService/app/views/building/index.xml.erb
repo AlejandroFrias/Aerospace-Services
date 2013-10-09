@@ -2,20 +2,17 @@
 
 
 <%#= @buildings.to_plist %>
-<array>
+
 <% @buildings.each do |b| %>
-  <dict>
+  <bldg>
     <% b.attributes.each do |b| %>
-      <key>
-        <%= b.first %>
-      </key>
-      <<%= plist_type(b.second) %>>
-       <%= b.second %>
-      </<%= plist_type(b.second) %>>
+      <<%= b.first %>>
+        <%= b.second %>
+      </<%= b.first %>>
     <% end %>
-  </dict>
+  </bldg>
 <% end %>
-</array>
+
 
 <%# params.each do |p|%>
 <%#= p.to_s.html_safe %>

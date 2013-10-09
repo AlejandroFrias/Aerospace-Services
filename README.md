@@ -15,6 +15,13 @@ Team members:
 Our services for aerospace clinic project 2013 will be hosted and
 developed using Ruby on Rails.
 
+Provided Services:
+
+  1. A list of buildings given lat, long, and range:
+    hmcbuildings.herokuapp.com/?latitude=YOUR_LAT&longitude=YOUR_LONG&range=YOUR_RANGE
+
+SETUP instruction:
+
 Guides for Ruby: http://guides.rubyonrails.org/
 
 Ruby Verion Manager: 1.22.10
