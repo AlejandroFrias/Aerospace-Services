@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  course: 
+  instructor: MyString
+  reg_limit: MyString
+  campus: MyString
+  bldg: MyString
+  room: MyString
+  days: MyString
+  start: MyString
+  end: MyString
+
+two:
+  title: MyString
+  course: 
+  instructor: MyString
+  reg_limit: MyString
+  campus: MyString
+  bldg: MyString
+  room: MyString
+  days: MyString
+  start: MyString
+  end: MyString

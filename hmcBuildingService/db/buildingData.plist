@@ -8,9 +8,11 @@
 		<key>longitude</key>
 		<real>-117.710106</real>
 		<key>description</key>
-		<string></string>
+		<string>Formerly The Little Pizza Place (a.k.a The Mudd Hole), Jay&apos;s Place was renovated in 2005 in remembrance of Jay Wolkin ’99, who died in an airplane crash shortly before he was to graduate from HMC.</string>
 		<key>name</key>
 		<string>Jay&apos;s Place</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -18,9 +20,11 @@
 		<key>longitude</key>
 		<real>-117.70983</real>
 		<key>description</key>
-		<string></string>
+		<string>Designed by NTD Architects, the Hoch-Shanahan Dining Commons was built in 2005 over the area where the (Scripps) swimming pool used to be.</string>
 		<key>name</key>
 		<string>Hoch-Shanahan</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -28,9 +32,11 @@
 		<key>longitude</key>
 		<real>-117.707584</real>
 		<key>description</key>
-		<string></string>
+		<string>The Linde Activities Center, more commonly known as &quot;the LAC,&quot; was completed in 1997.</string>
 		<key>name</key>
 		<string>Linde Activity Center</string>
+		<key>code</key>
+		<string>LAC</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -38,9 +44,11 @@
 		<key>longitude</key>
 		<real>-117.709806</real>
 		<key>description</key>
-		<string></string>
+		<string>The Joseph B. Platt Campus Center was named for the founding president.</string>
 		<key>name</key>
 		<string>Platt</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -48,9 +56,11 @@
 		<key>longitude</key>
 		<real>-117.710991</real>
 		<key>description</key>
-		<string></string>
+		<string>HMC&apos;s newest facility provides flexible and technologically-advanced classrooms, lecture halls, faculty offices and public spaces to support the widest range of pedagogies and learning styles.</string>
 		<key>name</key>
-		<string>Shanahan</string>
+		<string>Shanahan Center</string>
+		<key>code</key>
+		<string>SHAN</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -58,9 +68,11 @@
 		<key>longitude</key>
 		<real>-117.711967</real>
 		<key>description</key>
-		<string></string>
+		<string>Parsons Engineering Building, named in honor of Ralph M. Parsons, is a three-story building housing the Engineering Department, the Engineering Clinic, and the Humanities, Social Sciences, and Arts Department.</string>
 		<key>name</key>
 		<string>Parsons</string>
+		<key>code</key>
+		<string>PA</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -68,9 +80,11 @@
 		<key>longitude</key>
 		<real>-117.712731</real>
 		<key>description</key>
-		<string></string>
+		<string>The F. W. Olin Science Center, a gift of the F. W. Olin Foundation, is a three-story building completed in 1992. It houses the biology and computer science departments, and instructional facilities.</string>
 		<key>name</key>
 		<string>Olin</string>
+		<key>code</key>
+		<string>ON</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -78,9 +92,11 @@
 		<key>longitude</key>
 		<real>-117.711724</real>
 		<key>description</key>
-		<string></string>
+		<string>Galileo Hall rooms are named Pryne, McAlister and Edwards. It was named for the Galileo Society, an organization of local residents who take an active interest in the College, and was constructed in 1972 as part of Project Libra.</string>
 		<key>name</key>
 		<string>Galileo</string>
+		<key>code</key>
+		<string>GA</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -88,9 +104,11 @@
 		<key>longitude</key>
 		<real>-117.712649</real>
 		<key>description</key>
-		<string></string>
+		<string>Beckman Hall was built in 1991 with a gift from the Arnold and Mabel Beckman Foundation. It is part of an underground facility.</string>
 		<key>name</key>
 		<string>Beckman</string>
+		<key>code</key>
+		<string>BK</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -98,9 +116,11 @@
 		<key>longitude</key>
 		<real>-117.712168</real>
 		<key>description</key>
-		<string></string>
+		<string>The W.M. Keck Laboratories, a four-story building constructed with a gift from the W.M. Keck Foundation, houses the Department of Physics, classrooms, laboratories and a computer terminal room.</string>
 		<key>name</key>
 		<string>Keck</string>
+		<key>code</key>
+		<string>KE</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -108,9 +128,11 @@
 		<key>longitude</key>
 		<real>-117.711782</real>
 		<key>description</key>
-		<string></string>
+		<string>The Jacobs Science Center, a gift of Dr. and Mrs. Joseph J. Jacobs, is a three-story building housing offices and laboratories for the chemistry department. Built in 1959.</string>
 		<key>name</key>
 		<string>Jacobs</string>
+		<key>code</key>
+		<string>JA</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -118,9 +140,11 @@
 		<key>longitude</key>
 		<real>-117.712203</real>
 		<key>description</key>
-		<string></string>
+		<string>Formerly a library facility, the five-story building houses new Digital Learning Studios on the first floor. The offices of the Dean of Faculty are on the fourth floor, and workspaces for the Computer Science and Mathematics Departments are located on the second and third floors, respectively.</string>
 		<key>name</key>
 		<string>Sprague</string>
+		<key>code</key>
+		<string>SP</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -128,9 +152,11 @@
 		<key>longitude</key>
 		<real>-117.708228</real>
 		<key>description</key>
-		<string></string>
+		<string>Mildred E. Mudd Hall was the first building constructed on the Harvey Mudd College campus and was named for the wife of Harvey S. Mudd. Built in 1957 </string>
 		<key>name</key>
 		<string>East Dorme</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -138,9 +164,11 @@
 		<key>longitude</key>
 		<real>-117.708901</real>
 		<key>description</key>
-		<string></string>
+		<string>West Hall was the 2nd student residence hall built for the Harvey Mudd College campus. Built in 1958.</string>
 		<key>name</key>
 		<string>West Dorme</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -148,9 +176,11 @@
 		<key>longitude</key>
 		<real>-117.708223</real>
 		<key>description</key>
-		<string></string>
+		<string>North Hall was the third residence hall built for the Harvey Mudd College campus. Built  in 1959.</string>
 		<key>name</key>
 		<string>North Dorme</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -158,9 +188,11 @@
 		<key>longitude</key>
 		<real>-117.708888</real>
 		<key>description</key>
-		<string></string>
+		<string>South/Marks Hall is a two-story student residence hall named after David X. Marks. Built in 1968.</string>
 		<key>name</key>
 		<string>South Dorme</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -168,9 +200,11 @@
 		<key>longitude</key>
 		<real>-117.706745</real>
 		<key>description</key>
-		<string></string>
+		<string>J.L. Atwood Residence Hall is a three-story dormitory which houses 120 students. Built in 1981.</string>
 		<key>name</key>
 		<string>Atwood Dorme</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -178,9 +212,11 @@
 		<key>longitude</key>
 		<real>-117.70594</real>
 		<key>description</key>
-		<string></string>
+		<string>Case Residence Hall is a two-story student dormitory which was built to house 96 students. Built in 1985.</string>
 		<key>name</key>
 		<string>Case Dorme</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -188,9 +224,11 @@
 		<key>longitude</key>
 		<real>-117.705476</real>
 		<key>description</key>
-		<string></string>
+		<string>Linde Hall was built in 1993 with a gift from Ronald and Maxine Linde and consists of 12 six-person suites.</string>
 		<key>name</key>
 		<string>Linde Dorme</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -198,9 +236,11 @@
 		<key>longitude</key>
 		<real>-117.706758</real>
 		<key>description</key>
-		<string></string>
+		<string>Frederick and Susan Sontag Residence Hall, Harvey Mudd College&apos;s newest dorm, opened in the fall of 2004.</string>
 		<key>name</key>
 		<string>Sontag Dorme</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -208,9 +248,11 @@
 		<key>longitude</key>
 		<real>-117.710993</real>
 		<key>description</key>
-		<string></string>
+		<string>Kingston Hall is a two-story building constructed in 1961 as part of a two-building project funded by the Harvey S. and Mildred E. Mudd Foundation, Mrs. Frederick Kingston, and Mr. and Mrs. Leroy Garrett.</string>
 		<key>name</key>
 		<string>Kingston</string>
+		<key>code</key>
+		<string></string>
 	</dict>
 </array>
 </plist>

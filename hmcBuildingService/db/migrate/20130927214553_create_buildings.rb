@@ -5,6 +5,7 @@ class CreateBuildings < ActiveRecord::Migration
       t.decimal :longitude, :precision => 12, :scale => 8, :null => false
       t.decimal :altitude, :precision => 12, :scale => 8, :default => 0
       t.string :name
+      t.string :code, :default => "NONE"
       t.text :description
 
       t.timestamps

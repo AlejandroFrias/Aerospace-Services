@@ -31,7 +31,7 @@ Rails: 4.0.0
 MySQL: 5.0
 MySQL Workbench: 6.0.7
 
-How to install on mac (windows is mor difficult):
+How to install on mac (windows is more difficult):
 	1. \curl -L https://get.rvm.io | bash (installs Ruby Version Manager)
 	2. rvm install 2.0.0 (uses rvm to install Ruby)
 	3. ruby install rails (uses ruby to install rails)

@@ -6,6 +6,4 @@ class BuildingController < ApplicationController
                                        params[:range] || 1)
 
   end
-  private
-
 end

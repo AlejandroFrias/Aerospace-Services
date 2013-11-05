@@ -11,15 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927214553) do
+ActiveRecord::Schema.define(version: 20131104011115) do
 
-  create_table "buildings", force: true do |t|
-    t.decimal  "latitude",    precision: 12, scale: 8,                  null: false
-    t.decimal  "longitude",   precision: 12, scale: 8,                  null: false
-    t.decimal  "altitude",    precision: 12, scale: 8, default: 0.0
-    t.string   "name"
-    t.string   "code",                                 default: "NONE"
-    t.text     "description"
+  create_table "course_entries", force: true do |t|
+    t.string   "title"
+    t.string   "course"
+    t.string   "instructor"
+    t.string   "reg_limit"
+    t.string   "campus"
+    t.string   "bldg"
+    t.string   "room"
+    t.string   "days"
+    t.string   "start"
+    t.string   "end"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
