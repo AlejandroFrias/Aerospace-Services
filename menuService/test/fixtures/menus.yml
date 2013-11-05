@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  school: MyString
+  meal_type: MyString
+  day: MyString
+  start: MyString
+  end: MyString
+
+two:
+  school: MyString
+  meal_type: MyString
+  day: MyString
+  start: MyString
+  end: MyString
