@@ -1,0 +1,10 @@
+<% @building.attributes.each do |a| %>
+  <% unless a.first == "id" %>
+    <<%= a.first %>>
+      <%= a.second %>
+    </<%= a.first %>>
+  <% end %>
+<% end %>
+<thing>
+  <%= @EDO_xml %>
+  </thing>

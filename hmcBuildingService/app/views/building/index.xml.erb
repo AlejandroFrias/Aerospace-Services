@@ -1,22 +1,16 @@
-<%# params.each_with_index do |param, index| %>
-
-
-<%#= @buildings.to_plist %>
-
 <% @buildings.each do |b| %>
-  <bldg>
-    <% b.attributes.each do |b| %>
-      <<%= b.first %>>
-        <%= b.second %>
-      </<%= b.first %>>
+  <poi>
+    <% b.attributes.each do |a| %>
+      <<%= a.first %>>
+        <%= a.second %>
+      </<%= a.first %>>
     <% end %>
-  </bldg>
+    <update_url>
+      <%= building_url(b.attributes["id"]) %>
+    </update_url>
+    <update_freq>
+      10
+    </update_freq>
+  </poi>
 <% end %>
 
-
-<%# params.each do |p|%>
-<%#= p.to_s.html_safe %>
-<%# end %>
-
-
-<%# end %>

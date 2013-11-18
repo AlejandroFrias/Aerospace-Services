@@ -1,0 +1,11 @@
+title POI List Generation Sequence
+
+iPad->POI_EDO: bouding box
+opt in pararrel
+    POI_EDO->+Building_POI: bounding box
+    Building_POI-->-POI_EDO: List of Buildings
+    POI_EDO->+Bathroom_POI: bounding box
+    Bathroom_POI-->-POI_EDO: List of Bathrooms
+end
+note right of POI_EDO: Compose POI list
+POI_EDO->iPad: list of POIs

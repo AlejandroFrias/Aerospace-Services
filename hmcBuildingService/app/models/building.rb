@@ -5,9 +5,9 @@ class Building < ActiveRecord::Base
     long_upr_bound = longitude.to_f + range.to_f
     lat_lwr_bound = latitude.to_f - range.to_f
     long_lwr_bound = longitude.to_f - range.to_f
-    Building.where(latitude: lat_lwr_bound...lat_upr_bound,longitude: long_lwr_bound...long_upr_bound)
+
+    attrs = "name, latitude, longitude, altitude, id"
+    Building.where(latitude: lat_lwr_bound...lat_upr_bound,
+                   longitude: long_lwr_bound...long_upr_bound).select(attrs)
   end
-  #def to_plist_node
-    #attributes.to_plist.to_s
-  #end
 end

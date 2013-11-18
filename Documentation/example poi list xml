@@ -1,0 +1,13 @@
+<POI_LIST>
+  <POI>
+    <NAME>Linde Activity Center<NAME>
+    <LAT>34.8234787</LAT>
+    <LONG>-117.3422342</LONG>
+    <ALTITUDE>10</ALTITUDE>
+    <UPDATE_URL>http://buildingService.heroku.com/LAC</UPDATE_URL>
+    <UPDATE_FREQUENCY>15minutes</UPDATE_FREQUENCY>
+  </POI>
+  .
+  .
+  .
+</POI_LIST>

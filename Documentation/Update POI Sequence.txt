@@ -1,0 +1,18 @@
+title Update POI Sequence
+
+iPad->Building_Info_Service: update Url, time
+note right of Building_Info_Service
+    parse building code: bldg
+end note
+Building_Info_Service->+Network_Usage: bldg, time
+Network_Usage-->-Building_Info_Service: usage info
+opt if class building
+    Building_Info_Service->+Class_Schdules: bldg, time
+    Class_Schdules-->-Building_Info_Service: list of classes
+end
+opt if bldg=WEST
+    Building_Info_Service->+West_Music: bldg, time
+    West_Music-->-Building_Info_Service: list of classes
+end
+note right of Building_Info_Service: Compose all info on building
+Building_Info_Service->iPad: building info

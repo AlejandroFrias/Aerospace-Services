@@ -154,7 +154,7 @@
 		<key>description</key>
 		<string>Mildred E. Mudd Hall was the first building constructed on the Harvey Mudd College campus and was named for the wife of Harvey S. Mudd. Built in 1957 </string>
 		<key>name</key>
-		<string>East Dorme</string>
+		<string>East Dorm</string>
 		<key>code</key>
 		<string></string>
 	</dict>
@@ -166,7 +166,7 @@
 		<key>description</key>
 		<string>West Hall was the 2nd student residence hall built for the Harvey Mudd College campus. Built in 1958.</string>
 		<key>name</key>
-		<string>West Dorme</string>
+		<string>West Dorm</string>
 		<key>code</key>
 		<string></string>
 	</dict>
@@ -178,7 +178,7 @@
 		<key>description</key>
 		<string>North Hall was the third residence hall built for the Harvey Mudd College campus. Built  in 1959.</string>
 		<key>name</key>
-		<string>North Dorme</string>
+		<string>North Dorm</string>
 		<key>code</key>
 		<string></string>
 	</dict>
@@ -190,7 +190,7 @@
 		<key>description</key>
 		<string>South/Marks Hall is a two-story student residence hall named after David X. Marks. Built in 1968.</string>
 		<key>name</key>
-		<string>South Dorme</string>
+		<string>South Dorm</string>
 		<key>code</key>
 		<string></string>
 	</dict>
@@ -202,7 +202,7 @@
 		<key>description</key>
 		<string>J.L. Atwood Residence Hall is a three-story dormitory which houses 120 students. Built in 1981.</string>
 		<key>name</key>
-		<string>Atwood Dorme</string>
+		<string>Atwood Dorm</string>
 		<key>code</key>
 		<string></string>
 	</dict>
@@ -214,7 +214,7 @@
 		<key>description</key>
 		<string>Case Residence Hall is a two-story student dormitory which was built to house 96 students. Built in 1985.</string>
 		<key>name</key>
-		<string>Case Dorme</string>
+		<string>Case Dorm</string>
 		<key>code</key>
 		<string></string>
 	</dict>
@@ -226,7 +226,7 @@
 		<key>description</key>
 		<string>Linde Hall was built in 1993 with a gift from Ronald and Maxine Linde and consists of 12 six-person suites.</string>
 		<key>name</key>
-		<string>Linde Dorme</string>
+		<string>Linde Dorm</string>
 		<key>code</key>
 		<string></string>
 	</dict>
@@ -238,7 +238,7 @@
 		<key>description</key>
 		<string>Frederick and Susan Sontag Residence Hall, Harvey Mudd College&apos;s newest dorm, opened in the fall of 2004.</string>
 		<key>name</key>
-		<string>Sontag Dorme</string>
+		<string>Sontag Dorm</string>
 		<key>code</key>
 		<string></string>
 	</dict>
