@@ -1,8 +1,8 @@
 class MenuController < ApplicationController
 
-  def show
-  	#  params[:id] expected to be building code:  e.g., "SHAN"
-    @menu = Menu.find(params[:id])
-
+  def index
+  	@menu = Menu.find_menu_at_time_and_building(params[:time] || Time.now,
+  												params[:code] || "HOCH")
   end
+
 end
