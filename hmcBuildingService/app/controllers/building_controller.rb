@@ -19,6 +19,7 @@ class BuildingController < ApplicationController
     buildings_with_classes = "SHAN, LAC, PA, ON, GA, BK, KE, JA, SP"
 
     
+    # If the building has classes, use EDO script to grab schedules
     if buildings_with_classes[@building.code].blank?
       edo_xml = ""
     else 
@@ -26,7 +27,7 @@ class BuildingController < ApplicationController
       xml_doc = Nokogiri::XML(xml_raw)
       edo_xml = xml_doc.xpath('//array/schedule')
 
-      
+      # If there were no classes found at that time
       if edo_xml.first.element_children.none?
         edo_xml = ""
       else
