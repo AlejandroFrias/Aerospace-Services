@@ -1,0 +1,14 @@
+<LEDO>
+  <declaration>
+  
+  
+    <var name="course" using="@http://localhost:3001/?#EDOURIPARAMS" /> 
+
+  </declaration>
+  
+  <template>
+
+      $course
+
+  </template>
+</LEDO>

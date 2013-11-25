@@ -1,10 +1,8 @@
 <% @building.attributes.each do |a| %>
-  <% unless a.first == "id" %>
+  <% unless a.first == "id" || a.first == "code" %>
     <<%= a.first %>>
       <%= a.second %>
     </<%= a.first %>>
   <% end %>
 <% end %>
-<thing>
-  <%= @EDO_xml %>
-  </thing>
+<%= @EDO_xml %>

@@ -1,6 +1,12 @@
-<all>
+<schedule>
 <% @courses.each do |c| %>
-  <course><%= c["title"] %></course>
+  <course> 
+    <title><%= c["title"] %></title>
+    <number><%= c["course"] %></number>
+    <instructor><%= c["instructor"] %></instructor>
+    <start><%= Time.parse((c["start"].to_i/100).to_s+":"+(c["start"].to_i%100).to_s) %></start>
+    <end><%= Time.parse((c["end"].to_i/100).to_s+":"+(c["end"].to_i%100).to_s) %></end>
+  </course>
 
 <% end %>
-</all>
+</schedule>

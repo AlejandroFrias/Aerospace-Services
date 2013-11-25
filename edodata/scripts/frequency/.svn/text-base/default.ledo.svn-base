@@ -1,0 +1,16 @@
+
+
+<LEDO>
+	<declaration>
+	
+	
+		<var name="itu" using="@http://www.itu.int/frequency?#edoURIParams" />		
+
+	</declaration>
+	
+	<template>
+		<frequency>
+			$itu
+		</frequency>
+	</template>
+</LEDO>

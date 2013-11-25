@@ -1,0 +1,14 @@
+<LEDO>
+  <declaration>
+  
+  
+    <var name="mudd" using="@http://localhost:3000/#EDOPATH?#edoURIParams" />   
+
+  </declaration>
+  
+  <template>
+
+      $mudd
+
+  </template>
+</LEDO>

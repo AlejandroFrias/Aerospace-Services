@@ -6,7 +6,7 @@ class Building < ActiveRecord::Base
     lat_lwr_bound = latitude.to_f - range.to_f
     long_lwr_bound = longitude.to_f - range.to_f
 
-    attrs = "name, latitude, longitude, altitude, id"
+    attrs = "name, latitude, longitude, altitude, id, code"
     Building.where(latitude: lat_lwr_bound...lat_upr_bound,
                    longitude: long_lwr_bound...long_upr_bound).select(attrs)
   end
