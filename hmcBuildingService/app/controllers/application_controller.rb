@@ -3,10 +3,19 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :set_format
+  before_filter :init
 
-	def set_format
-	  request.format = 'xml'
-	end
-	
+  def init
+    # set the format to xml only
+    request.format = 'xml'
+
+    # useful constants
+    @EDO_URL = "http://134.173.43.11:8080/edoWeb/services/invoke/"
+    
+    @CLASS_ROOMS = "SHAN, LAC, PA, ON, GA, BK, KE, JA, SP"
+    @DINING_HALLS = "HOCH"
+    @MUSIC = "WEST"
+  end
+  
+
 end

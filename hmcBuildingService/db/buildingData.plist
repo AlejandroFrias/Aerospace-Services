@@ -16,15 +16,15 @@
 	</dict>
 	<dict>
 		<key>latitude</key>
-		<real>34.10588</real>
+		<real>34.105973</real>
 		<key>longitude</key>
-		<real>-117.70983</real>
+		<real>-117.709811</real>
 		<key>description</key>
 		<string>Designed by NTD Architects, the Hoch-Shanahan Dining Commons was built in 2005 over the area where the (Scripps) swimming pool used to be.</string>
 		<key>name</key>
 		<string>Hoch-Shanahan</string>
 		<key>code</key>
-		<string></string>
+		<string>HOCH</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -156,7 +156,7 @@
 		<key>name</key>
 		<string>East Dorm</string>
 		<key>code</key>
-		<string></string>
+		<string>EAST</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -168,7 +168,7 @@
 		<key>name</key>
 		<string>West Dorm</string>
 		<key>code</key>
-		<string></string>
+		<string>WEST</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -180,7 +180,7 @@
 		<key>name</key>
 		<string>North Dorm</string>
 		<key>code</key>
-		<string></string>
+		<string>NORTH</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -192,7 +192,7 @@
 		<key>name</key>
 		<string>South Dorm</string>
 		<key>code</key>
-		<string></string>
+		<string>SOUTH</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -204,7 +204,7 @@
 		<key>name</key>
 		<string>Atwood Dorm</string>
 		<key>code</key>
-		<string></string>
+		<string>ATWOOD</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -216,7 +216,7 @@
 		<key>name</key>
 		<string>Case Dorm</string>
 		<key>code</key>
-		<string></string>
+		<string>CASE</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -228,7 +228,7 @@
 		<key>name</key>
 		<string>Linde Dorm</string>
 		<key>code</key>
-		<string></string>
+		<string>LINDE</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -240,7 +240,7 @@
 		<key>name</key>
 		<string>Sontag Dorm</string>
 		<key>code</key>
-		<string></string>
+		<string>SONTAG</string>
 	</dict>
 	<dict>
 		<key>latitude</key>
@@ -252,7 +252,7 @@
 		<key>name</key>
 		<string>Kingston</string>
 		<key>code</key>
-		<string></string>
+		<string>KINGSTON</string>
 	</dict>
 </array>
 </plist>

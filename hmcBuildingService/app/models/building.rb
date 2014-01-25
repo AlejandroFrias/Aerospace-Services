@@ -1,6 +1,5 @@
 class Building < ActiveRecord::Base
   def self.find_near_me(latitude, longitude, range)
-    buildings = Building.all;
     lat_upr_bound = latitude.to_f + range.to_f
     long_upr_bound = longitude.to_f + range.to_f
     lat_lwr_bound = latitude.to_f - range.to_f

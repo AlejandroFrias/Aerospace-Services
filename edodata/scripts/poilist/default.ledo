@@ -1,0 +1,16 @@
+<LEDO>
+  <declaration>
+  
+  
+    <var name="building" using="@http://localhost:3000/?#EDOURIPARAMS" /> 
+    <var name="bathroom" using="@http://localhost:3003/?#EDOURIPARAMS" /> 
+
+  </declaration>
+  
+  <template>
+    <array>
+      <use var="$building[/array/*]" />
+      <use var="$bathroom[/array/*]" />
+    </array>
+  </template>
+</LEDO>

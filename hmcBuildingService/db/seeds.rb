@@ -11,5 +11,5 @@
 building_params = Plist::parse_xml( "db/buildingData.plist" )
 
 building_params.each do |param|
-  Building.create(param);
+  Building.create(param)
 end

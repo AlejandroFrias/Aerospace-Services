@@ -1,12 +1,15 @@
 <% @buildings.each do |b| %>
   <poi>
+    <tag><%= @tags[b.attributes["id"]] %></tag>
     <% b.attributes.each do |a| %>
-      <<%= a.first %>>
-        <%= a.second %>
-      </<%= a.first %>>
+      <% unless a.first == "id" %>
+        <<%= a.first %>>
+          <%= a.second %>
+        </<%= a.first %>>
+      <% end %>
     <% end %>
     <update_url>
-      <%= building_url(b.attributes["id"]) %>
+     134.173.43.11:3000<%= building_path(b.attributes["id"]) %>
     </update_url>
     <update_freq>
       10

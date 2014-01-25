@@ -1,0 +1,10 @@
+<% @bathrooms.each do |b| %>
+  <poi>
+    <tag>bathroom</tag>
+    <% b.attributes.each do |a| %>
+      <<%= a.first %>>
+        <%= a.second %>
+      </<%= a.first %>>
+    <% end %>
+  </poi>
+<% end %>

@@ -72,24 +72,6 @@ START_END_TIMES = {
 		"dinner" =>
 			{"start" => "1700", "end" => "1900"}
 		}
-	},
-
-	"MCCO" =>
-	{
-		"sat" =>
-		{
-			"brunch" => {"start" => "1030", "end" => "1230"},
-			"dinner" => {"start" => "1700", "end" => "1830"}
-		},
-		"sun" =>
-		{
-			"brunch" => {"start" => "1030", "end" => "1230"},
-			"dinner" => {"start" => "1700", "end" => "1830"}
-		},
-		"mon" =>
-		{
-			"breakfast" => {"start" => "730", "end" => }
-		}
 	}
 }
 

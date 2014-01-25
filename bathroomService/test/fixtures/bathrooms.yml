@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  latitude: MyString
+  longitude: MyString
+  altitude: MyString
+  floor: 1
+  type: 
+  building: MyString
+
+two:
+  latitude: MyString
+  longitude: MyString
+  altitude: MyString
+  floor: 1
+  type: 
+  building: MyString

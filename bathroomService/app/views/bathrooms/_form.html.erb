@@ -1,0 +1,41 @@
+<%= form_for(@bathroom) do |f| %>
+  <% if @bathroom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bathroom.errors.count, "error") %> prohibited this bathroom from being saved:</h2>
+
+      <ul>
+      <% @bathroom.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :altitude %><br>
+    <%= f.text_field :altitude %>
+  </div>
+  <div class="field">
+    <%= f.label :floor %><br>
+    <%= f.number_field :floor %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :building %><br>
+    <%= f.text_field :building %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
