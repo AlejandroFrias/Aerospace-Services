@@ -10,11 +10,8 @@ class ApplicationController < ActionController::Base
     request.format = 'xml'
 
     # useful constants
-    @EDO_URL = "http://134.173.43.11:8080/edoWeb/services/invoke/"
-    
-    @CLASS_ROOMS = "SHAN, LAC, PA, ON, GA, BK, KE, JA, SP"
-    @DINING_HALLS = "HOCH"
-    @MUSIC = "WEST"
+    @SERVER_IP = "134.173.43.11"
+    @EDO_URL = "http://#{@SERVER_IP}:8080/edoWeb/services/invoke/"
   end
   
 

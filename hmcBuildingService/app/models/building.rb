@@ -9,4 +9,23 @@ class Building < ActiveRecord::Base
     Building.where(latitude: lat_lwr_bound...lat_upr_bound,
                    longitude: long_lwr_bound...long_upr_bound).select(attrs)
   end
+
+  def has_class_rooms ()
+    class_rooms = "SHAN, LAC, PA, ON, GA, BK, KE, JA, SP"
+    
+    !class_rooms[self.code].blank?
+  end
+
+  def has_dining_halls ()
+    dining_halls = "HOCH"
+
+    !dining_halls[self.code].blank?
+  end
+  
+  def has_music ()
+    music = "WEST"
+
+    !music[self.code].blank?
+  end
+
 end

@@ -34,16 +34,7 @@ class BuildingController < ApplicationController
     t = Time.parse(params[:time]) rescue Time.now
     s = URI.escape(t.to_s)
 
-    buildings_with_classes = "SHAN, LAC, PA, ON, GA, BK, KE, JA, SP"
-    dining_halls = "HOCH"
-    plays_music = "WEST"
-
-    has_class_rooms = !@CLASS_ROOMS[@building.code].blank?
-    has_dining_halls = !@DINING_HALLS[@building.code].blank?
-    has_music = !@MUSIC[@building.code].blank?
-
-    # If the building has classes, use EDO script to grab schedules
-    if has_class_rooms
+    if @building.has_class_rooms
 
       xml_raw = Net::HTTP.get(URI.parse("#{@EDO_URL}building/?time=#{s}&building=#{@building.code}"))
       xml_doc = Nokogiri::XML(xml_raw)
@@ -55,8 +46,7 @@ class BuildingController < ApplicationController
       else
         edo_xml = edo_xml.to_xml
       end
-    # If the building is the HOCH (or any dining hall) use edo script for getting menus
-    elsif has_dining_halls
+    elsif @building.has_dining_halls
 
       xml_raw = Net::HTTP.get(URI.parse("#{@EDO_URL}dininghall/?time=#{s}&code=#{@building.code}"))
       xml_doc = Nokogiri::XML(xml_raw)
@@ -68,7 +58,7 @@ class BuildingController < ApplicationController
       else
         edo_xml = edo_xml.to_xml
       end
-    elsif has_music
+    elsif @building.has_music
       xml_raw = Net::HTTP.get(URI.parse("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rj&api_key=51433a913f106680dbed95c47033fe87"))
       xml_doc = Nokogiri::XML(xml_raw)
       recenttracks = xml_doc.xpath('//recenttracks')

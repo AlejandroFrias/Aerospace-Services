@@ -1,6 +1,6 @@
-<% @buildings.each do |b| %>
+<% @buildings.each_with_index do |b, i| %>
   <poi>
-    <tag><%= @tags[b.attributes["id"]] %></tag>
+    <tag><%= @tags[i] %></tag>
     <% b.attributes.each do |a| %>
       <% unless a.first == "id" %>
         <<%= a.first %>>
@@ -9,7 +9,9 @@
       <% end %>
     <% end %>
     <update_url>
-     134.173.43.11:3000<%= building_path(b.attributes["id"]) %>
+     <%  up = building_url(b.attributes["id"]) %>
+     <%  up["localhost"] = @SERVER_IP unless up["localhost"].nil? %>
+     <%= up %>
     </update_url>
     <update_freq>
       10
