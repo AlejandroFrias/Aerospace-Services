@@ -1,11 +1,18 @@
 <menu>
 <% if @menu %>
-  <<%= @menu.meal_type %>>
+  <meals>
   <% @menu.meals.each do |m| %>
-    <meal>
+    <food>
     	<%= m["name"] %>
-    </meal>
+    </food>
   <% end %>
-  </<%= @menu.meal_type %>>
+  </meals>
+  <% @menu.attributes.each do |a| %>
+    <% unless a.first == "id" %>
+      <<%= a.first %>>
+        <%= a.second %>
+      </<%= a.first %>>
+    <% end %>
+  <% end %>
 <% end %>
 </menu>

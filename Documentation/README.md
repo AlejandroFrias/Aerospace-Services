@@ -2,7 +2,7 @@ Aerospace-Services
 
 Author: Alejandro Frias
 Created: 20 September 2013
-Last Updated: 27 September 2013
+Last Updated: 31 January 2013
 
 Version: -1
 ==================
@@ -66,3 +66,9 @@ How to use/setup MySQL Workbench:
   1. You should see the available databases on the left, under SCHEMAS.
   2. In the main SQL file type "use database_name;" where database_name is the name of the development database you see available (which is hmcBuildingService_development if you are using that)
   3. COMMAND + ENTER or the lighting icons will run any mysql commands you enter. You can even edit the table that pops up from a SELECT query and it will create the correct SQL commands to incorporate the change and let you run them. This includes creating/deleting rows (or entries)
+
+Ports used locally for each service:
+3000 - hmcBuildingService
+3001 - classSchedules
+3002 - menuService
+3003 - dropNoteService

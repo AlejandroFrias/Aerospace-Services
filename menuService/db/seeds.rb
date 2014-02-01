@@ -30,7 +30,7 @@ START_END_TIMES = {
 	
 	"mon" =>
 		{"breakfast" =>
-			{"start" => "730", "end" => "930"},
+			{"start" => "0730", "end" => "0930"},
 		"lunch" =>
 			{"start" => "1115", "end" => "1245"},
 		"dinner" =>
@@ -39,7 +39,7 @@ START_END_TIMES = {
 	
 	"tue" =>
 		{"breakfast" =>
-			{"start" => "730", "end" => "930"},
+			{"start" => "0730", "end" => "0930"},
 		"lunch" =>
 			{"start" => "1115", "end" => "1245"},
 		"dinner" =>
@@ -48,7 +48,7 @@ START_END_TIMES = {
 	
 	"wed" =>
 		{"breakfast" =>
-			{"start" => "730", "end" => "930"},
+			{"start" => "0730", "end" => "0930"},
 		"lunch" =>
 			{"start" => "1115", "end" => "1245"},
 		"dinner" =>
@@ -57,7 +57,7 @@ START_END_TIMES = {
 	
 	"thu" =>
 		{"breakfast" =>
-			{"start" => "730", "end" => "930"},
+			{"start" => "0730", "end" => "0930"},
 		"lunch" =>
 			{"start" => "1115", "end" => "1245"},
 		"dinner" =>
@@ -66,7 +66,7 @@ START_END_TIMES = {
 
 	"fri" =>
 		{"breakfast" =>
-			{"start" => "730", "end" => "930"},
+			{"start" => "0730", "end" => "0930"},
 		"lunch" =>
 			{"start" => "1115", "end" => "1245"},
 		"dinner" =>

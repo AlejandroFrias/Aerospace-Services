@@ -7,7 +7,15 @@ class Menu < ActiveRecord::Base
 		day = days[t.wday]
 		time_num = t.hour.to_s.rjust(2,"0") + t.min.to_s.rjust(2,"0")
 
-        Menu.where('(day = ?) AND (? BETWEEN start AND end) AND (school = ?) ',
-        	day, time_num, school).first
+    # m =  Menu.where('(day = ?) AND (? BETWEEN start AND end) AND (school = ?) ',
+    #     	day, time_num, school).first
+    attrs = "id, meal_type, day, start, end"
+    menus = Menu.where('(day = ?) AND (school = ?) ', day, school).order('start DESC').select(attrs)
+    result = menus.first
+    menus.each do |m|
+      result = m unless time_num > m.end
     end
+
+    result
+  end
 end
