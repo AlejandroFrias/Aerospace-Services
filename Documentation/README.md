@@ -16,9 +16,27 @@ Our services for aerospace clinic project 2013 will be hosted and
 developed using Ruby on Rails.
 
 Provided Services:
+  1. EDO script gives List of POis given lat, long, and range (all in decimal degrees)
+      e.g. http://134.173.43.11:8080/edoWeb/services/invoke/poilist/?latitude=34.105&longitude=-117.709&range=0.001
 
-  1. A list of buildings given lat, long, and range:
-    hmcbuildingservice.herokuapp.com/?latitude=YOUR_LAT&longitude=YOUR_LONG&range=YOUR_RANGE
+     This script composes the following:
+        i. A List of BUILDINGS given lat, long, and range (all in decimal degrees)
+            e.g. http://134.173.43.11:3000/?latitude=34.105&longitude=-117.709&range=0.001
+
+        ii. A List of NOTES given lat, long, and range (all in decimal degrees)
+            e.g. http://134.173.43.11:3003/?latitude=34.105&longitude=-117.709&range=0.001
+
+  2. Update a building, given a time (or defaults to current time)
+      e.g. http://134.173.43.11:3000/building/2/?time=2014-1-31 2:00pm
+
+     Depending on the building, an EDO script composes the relevant service from this list:
+        i. All the CLASSES going on in the building at the given (or defulat to current) time
+          e.g. http://134.173.43.11:3001/?time=2014-1-31 2:00pm
+
+        ii. The MENU of the dininghall at the given time or the next upcoming meal of the day
+          e.g. http://134.173.43.11:3002/?time=2014-1-31 2:00pm
+
+        iii. The MUSIC playing at West through lastfm's API.
 
 SETUP instruction:
 
@@ -66,6 +84,15 @@ How to use/setup MySQL Workbench:
   1. You should see the available databases on the left, under SCHEMAS.
   2. In the main SQL file type "use database_name;" where database_name is the name of the development database you see available (which is hmcBuildingService_development if you are using that)
   3. COMMAND + ENTER or the lighting icons will run any mysql commands you enter. You can even edit the table that pops up from a SELECT query and it will create the correct SQL commands to incorporate the change and let you run them. This includes creating/deleting rows (or entries)
+
+************************************************************************ 
+     TODO: Make the system deployable, not reliant on assigned IP
+************************************************************************
+
+
+Currently all services are expected to run locally.
+
+Assigned IP: 134.73.43.11
 
 Ports used locally for each service:
 3000 - hmcBuildingService
