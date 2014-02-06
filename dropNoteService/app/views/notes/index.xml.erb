@@ -1,0 +1,19 @@
+<% @notes.each_with_index do |note, i| %>
+  <poi>
+    <% note.attributes.each do |a| %>
+      <% unless a.first == "id" %>
+        <<%= a.first %>>
+          <%= a.second %>
+        </<%= a.first %>>
+      <% end %>
+    <% end %>
+    <update_url>
+     <%  up = note_url(note.attributes["id"]) %>
+     <%  up["localhost"] = @SERVER_IP unless up["localhost"].nil? %>
+     <%= up %>
+    </update_url>
+    <update_freq>
+      10
+    </update_freq>
+  </poi>
+<% end %>
