@@ -50,10 +50,11 @@ MySQL: 5.0
 MySQL Workbench: 6.0.7
 
 How to install on mac (windows is more difficult):
-	1. \curl -L https://get.rvm.io | bash (installs Ruby Version Manager)
-	2. rvm install 2.0.0 (uses rvm to install Ruby, if you don't already have the current version)
-	3. sudo ruby install rails (uses ruby to install rails)
-  4. check that versions match (rvm -v, ruby -v, rails -v)
+  1. \curl -L https://get.rvm.io | bash (installs Ruby Version Manager)
+  2. rvm install 2.0.0 (uses rvm to install Ruby, if you don't already have the current version)
+  3. sudo gem install rails (needs xcode and xcodes's command line tools installed)
+  4. check that version match (rvm -v, ruby -v, rails -v)
+
 
 How to setup database:
   0. rake db:drop (delete the table if you need to restart)
