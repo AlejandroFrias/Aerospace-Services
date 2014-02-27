@@ -17,24 +17,24 @@ developed using Ruby on Rails.
 
 Provided Services:
   1. EDO script gives List of POis given lat, long, and range (all in decimal degrees)
-      e.g. http://134.173.43.11:8080/edoWeb/services/invoke/poilist/?latitude=34.105&longitude=-117.709&range=0.001
+      e.g. http://134.173.43.28 :8080/edoWeb/services/invoke/poilist/?latitude=34.105&longitude=-117.709&range=0.001
 
      This script composes the following:
         i. A List of BUILDINGS given lat, long, and range (all in decimal degrees)
-            e.g. http://134.173.43.11:3000/?latitude=34.105&longitude=-117.709&range=0.001
+            e.g. http://134.173.43.28:3000/?latitude=34.105&longitude=-117.709&range=0.001
 
         ii. A List of NOTES given lat, long, and range (all in decimal degrees)
-            e.g. http://134.173.43.11:3003/?latitude=34.105&longitude=-117.709&range=0.001
+            e.g. http://134.173.43.28:3003/?latitude=34.105&longitude=-117.709&range=0.001
 
   2. Update a building, given a time (or defaults to current time)
-      e.g. http://134.173.43.11:3000/building/2/?time=2014-1-31 2:00pm
+      e.g. http://134.173.43.28:3000/building/2/?time=2014-1-31 2:00pm
 
      Depending on the building, an EDO script composes the relevant service from this list:
         i. All the CLASSES going on in the building at the given (or defulat to current) time
-          e.g. http://134.173.43.11:3001/?time=2014-1-31 2:00pm
+          e.g. http://134.173.43.28:3001/?time=2014-1-31 2:00pm
 
         ii. The MENU of the dininghall at the given time or the next upcoming meal of the day
-          e.g. http://134.173.43.11:3002/?time=2014-1-31 2:00pm
+          e.g. http://134.173.43.28:3002/?time=2014-1-31 2:00pm
 
         iii. The MUSIC playing at West through lastfm's API.
 
@@ -93,7 +93,7 @@ How to use/setup MySQL Workbench:
 
 Currently all services are expected to run locally.
 
-Assigned IP: 134.73.43.11
+Assigned IP: 134.73.43.28
 
 Ports used locally for each service:
 3000 - hmcBuildingService
