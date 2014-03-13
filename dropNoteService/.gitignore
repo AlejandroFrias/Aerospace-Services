@@ -14,3 +14,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore the database yml file, since your passwords and database setup might be different
+/config/database.yml

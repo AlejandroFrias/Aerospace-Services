@@ -4,8 +4,6 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    # @notes = Note.all
-
     @notes = Note.find_near_me(params[:latitude]  || 0,
                                params[:longitude] || 0, 
                                params[:range] || 200)

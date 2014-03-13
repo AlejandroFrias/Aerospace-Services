@@ -3,6 +3,8 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.string :tag, :default => "note"
       t.string :title
+      t.string :user, :default => "public"
+      t.string :password, :default => "password"
       t.text :body
       t.decimal :latitude, :precision => 12, :scale => 8, :null => false
       t.decimal :longitude, :precision => 12, :scale => 8, :null => false

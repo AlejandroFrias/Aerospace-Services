@@ -5,7 +5,7 @@ class Note < ActiveRecord::Base
     lat_lwr_bound = latitude.to_f - range.to_f
     long_lwr_bound = longitude.to_f - range.to_f
 
-    attrs = "title, tag, latitude, longitude, altitude, id"
+    attrs = "title, tag, user, latitude, longitude, altitude, id"
     Note.where(latitude: lat_lwr_bound...lat_upr_bound,
                longitude: long_lwr_bound...long_upr_bound).select(attrs)
   end
