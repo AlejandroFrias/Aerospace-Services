@@ -10,25 +10,17 @@
     <update_url>
       <%  up = note_url(note.attributes["id"]) %>
       <%  up["localhost"] = @SERVER_IP unless up["localhost"].nil? %>
+      <%  up["127.0.0.1"] = @SERVER_IP unless up["127.0.0.1"].nil? %>
       <%= up %>
     </update_url>
     <update_freq>
       10
     </update_freq>
-    <edit_url>
-      <%  edit = edit_note_url(note.attributes["id"]) %>
-      <%  edit["localhost"] = @SERVER_IP unless edit["localhost"].nil? %>
-      <%= edit %>
-    </edit_url>
     <create_url>
-      <%  create = new_note_url %>
+      <%  create = notes_url %>
       <%  create["localhost"] = @SERVER_IP unless create["localhost"].nil? %>
+      <%  create["127.0.0.1"] = @SERVER_IP unless create["127.0.0.1"].nil? %>
       <%= create %>
     </create_url>
-    <delete_url>
-      <%  delete = note_url(note.attributes["id"]) %>
-      <%  delete["localhost"] = @SERVER_IP unless delete["localhost"].nil? %>
-      <%= delete %>
-    </delete_url>
   </poi>
 <% end %>

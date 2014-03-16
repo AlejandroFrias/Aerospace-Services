@@ -6,9 +6,16 @@ class Note < ActiveRecord::Base
     long_lwr_bound = longitude.to_f - range.to_f
 
     attrs = "title, tags, user, latitude, longitude, altitude, id"
-    Note.where(latitude: lat_lwr_bound...lat_upr_bound,
+    users = user.split(", ")
+    n = Note.where(latitude: lat_lwr_bound...lat_upr_bound,
+                   longitude: long_lwr_bound...long_upr_bound,
+                   user: users.pop).select(attrs)
+    for u in users
+      n += Note.where(latitude: lat_lwr_bound...lat_upr_bound,
                longitude: long_lwr_bound...long_upr_bound,
-               user: user).select(attrs)
+               user: u).select(attrs)
+    end
+    n
   end
 
   def self.valid_user_password(user, password)

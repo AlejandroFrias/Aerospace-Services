@@ -14,7 +14,7 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.json
   def show
-    attrs = "title, tags, user, body"
+    attrs = "title, tags, user, body, latitude, longitude"
     @note = Note.where(params[:id]).select(attrs).first
   end
 
