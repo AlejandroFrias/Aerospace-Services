@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Note.create(title: "Hello World", body: "This is a test note.", tag: "note, test", latitude: 34.106083, longitude: -117.711717, altitude: 0)
+Note.create(title: "Hello World", body: "This is a test note.", tags: "note, test", latitude: 34.106083, longitude: -117.711717, altitude: 0)
