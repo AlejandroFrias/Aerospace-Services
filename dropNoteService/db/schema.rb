@@ -11,17 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140125225348) do
+ActiveRecord::Schema.define(version: 20140317022110) do
+
+  create_table "friendships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notes", force: true do |t|
-    t.string   "tags",                                default: "note"
-    t.string   "title",                                                    null: false
-    t.string   "user",                                default: "public"
-    t.string   "password",                            default: "password"
-    t.text     "body",                                                     null: false
-    t.decimal  "latitude",   precision: 12, scale: 8,                      null: false
-    t.decimal  "longitude",  precision: 12, scale: 8,                      null: false
+    t.integer  "user_id"
+    t.string   "title",                                               null: false
+    t.text     "body",                                                null: false
+    t.boolean  "privacy_on",                          default: false
+    t.decimal  "latitude",   precision: 12, scale: 8,                 null: false
+    t.decimal  "longitude",  precision: 12, scale: 8,                 null: false
     t.decimal  "altitude",   precision: 12, scale: 8, default: 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "note_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

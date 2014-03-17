@@ -1,5 +1,19 @@
+<tags>
+  <% if !@note.tags.blank? %>
+    <% t = [] %>
+    <% for tag in @note.tags %>
+      <% t.insert(0, tag.name) %>
+    <% end %>
+  <% else %>
+    <% t = ["note"] %>
+  <% end %>
+  <%= t.join(", ") %>
+</tags>
+<user>
+<%= @note.user.name %>
+</user>
 <% @note.attributes.each do |a| %>
-  <% unless a.first == "id" %>
+  <% unless a.first =~ /id/ %>
     <<%= a.first %>>
       <%= a.second %>
     </<%= a.first %>>

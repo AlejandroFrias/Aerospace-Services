@@ -1,5 +1,16 @@
 <% @notes.each_with_index do |note, i| %>
   <poi>
+    <tags>
+      <% if !note.tags.blank? %>
+        <% t = [] %>
+        <% for tag in note.tags %>
+          <% t += [tag.name] %>
+        <% end %>
+      <% else %>
+        <% t = ["note"] %>
+      <% end %>
+      <%= t.join(", ") %>
+    </tags>
     <% note.attributes.each do |a| %>
       <% unless a.first == "id" %>
         <<%= a.first %>>
