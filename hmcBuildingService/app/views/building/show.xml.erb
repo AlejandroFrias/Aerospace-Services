@@ -1,3 +1,14 @@
+<tags>
+  <% if !@building.tags.blank? %>
+    <% t = [] %>
+    <% for tag in @building.tags %>
+      <% t += [tag.name] %>
+    <% end %>
+  <% else %>
+    <% t = ["none"] %>
+  <% end %>
+  <%= t.join(", ") %>
+</tags>
 <% @building.attributes.each do |a| %>
   <% unless a.first == "id" || a.first == "code" %>
     <<%= a.first %>>

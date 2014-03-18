@@ -1,6 +1,16 @@
-<% @buildings.each_with_index do |b, i| %>
+<% @buildings.each do |b| %>
   <poi>
-    <tag><%= @tags[i] %></tag>
+    <tags>
+      <% if !b.tags.blank? %>
+        <% t = [] %>
+        <% for tag in b.tags %>
+          <% t += [tag.name] %>
+        <% end %>
+      <% else %>
+        <% t = ["building"] %>
+      <% end %>
+      <%= t.join(", ") %>
+    </tags>
     <% b.attributes.each do |a| %>
       <% unless a.first == "id" %>
         <<%= a.first %>>
