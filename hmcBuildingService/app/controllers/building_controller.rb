@@ -1,13 +1,18 @@
 require 'net/http'
 
+# poi lists of buildings (index) and info on individual buildings (show)
 class BuildingController < ApplicationController
+  # Permits params latitude, longitude, range, tags.
+  # Finds all buildings within the bounding box that have any of the given tags.
+  # Defaults are accepted. Check Building.find_near_me
   def index
-
-    @buildings = Building.find_near_me(params[:latitude]  || 0,
-                                       params[:longitude] || 0, 
-                                       params[:range] || 200)
+    @buildings = Building.find_near_me(search_params)
   end
 
+  # Displays all available building info for a specific building.
+  # All buildings have tags, a name, and a description to be shown.
+  # Class Schedules, Menus and Music Play-lists are displayed for buildings
+  # tagged as 'classes', 'dininghall' and 'music' reflectively
   def show
     attrs = "name, description, code, id"
     @building = Building.where(id: params[:id]).select(attrs).first
@@ -58,4 +63,10 @@ class BuildingController < ApplicationController
     @EDO_xml = edo_xml.html_safe
       
   end
+
+  private
+    # White list permitted parameters
+    def search_params
+      params.permit(:latitude, :longitude, :range, :tags)
+    end
 end
