@@ -1,3 +1,5 @@
+# Notes can be viewed in list format, individually. They can be created, modified and destroyed.
+# Basic HTTP Username/Password authentication required.
 class NotesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_note, only: [:edit, :update, :destroy]
@@ -5,6 +7,7 @@ class NotesController < ApplicationController
 
   # GET /notes
   # GET /notes.json
+  # Notes can be searched for by a combination of users and tags.
   def index
     @notes = Note.find_near_me(search_params)
   end
@@ -13,7 +16,6 @@ class NotesController < ApplicationController
   # GET /notes/1.json
   def show
     attrs = "title, body, latitude, longitude, altitude, privacy_on, updated_at, user_id, id"
-    puts "WHY Is ID #{params[:id]}?!?!?!!?"
     @note = Note.where(id: params[:id]).select(attrs).first
   end
 
@@ -86,11 +88,14 @@ class NotesController < ApplicationController
       @note = Note.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # White list permitted parameters for updating a note with
     def update_note_params
       params.permit(:title, :body, :privacy_on, :latitude, :longitude, :altitude)
     end
 
+    
+    # White list permitted parameters for creating a note with
+    # Returns false if required params are not present
     def create_note_params
       p = params.permit(:title, :body, :privacy_on, :latitude, :longitude, :altitude)
       if p[:title].nil? or p[:body].nil? or p[:latitude].nil? or p[:longitude].nil?
@@ -113,6 +118,7 @@ class NotesController < ApplicationController
       p
     end
 
+    # Authentication will create a new user if the user doesn't exist already
     def authenticate
       if user = authenticate_with_http_basic { |u, p| User.authenticate(u, p) }
         @user = user

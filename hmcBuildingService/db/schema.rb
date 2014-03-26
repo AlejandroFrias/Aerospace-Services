@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927214553) do
+ActiveRecord::Schema.define(version: 20140317201800) do
 
   create_table "buildings", force: true do |t|
     t.decimal  "latitude",    precision: 12, scale: 8,                  null: false
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 20130927214553) do
     t.string   "name"
     t.string   "code",                                 default: "NONE"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "building_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
