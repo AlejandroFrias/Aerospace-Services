@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: menus
+#
+#  id         :integer          not null, primary key
+#  school     :string(255)
+#  meal_type  :string(255)
+#  day        :string(255)
+#  start      :string(255)
+#  end        :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

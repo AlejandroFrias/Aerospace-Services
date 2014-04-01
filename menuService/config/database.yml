@@ -14,7 +14,7 @@ development:
   database: menuService_development
   pool: 5
   username: root
-  password:
+  password: q94b8ZuS
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -26,7 +26,7 @@ test:
   database: menuService_test
   pool: 5
   username: root
-  password:
+  password: q94b8ZuS
   socket: /tmp/mysql.sock
 
 production:
@@ -35,5 +35,5 @@ production:
   database: menuService_production
   pool: 5
   username: root
-  password:
+  password: q94b8ZuS
   socket: /tmp/mysql.sock

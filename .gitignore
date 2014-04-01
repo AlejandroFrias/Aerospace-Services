@@ -1,0 +1,2 @@
+# ignore computer/user specific changes to database.yml (like passwords)
+database.yml

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>class Note - Rails Application Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#class-Note-label-Purpose">Purpose</a>
+    <li><a href="#class-Note-label-Schema+Information">Schema Information</a>
+  </ul>
+</div>
+
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-find_near_me">::find_near_me</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Note">
+  <h1 id="class-Note" class="class">
+    class Note
+  </h1>
+
+  <section class="description">
+    
+<h2 id="class-Note-label-Purpose">Purpose<span><a href="#class-Note-label-Purpose">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Notes belong to a single user and can have many tags. A note is simply a
+title and text.</p>
+
+<h2 id="class-Note-label-Schema+Information">Schema Information<span><a href="#class-Note-label-Schema+Information">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Table name: notes</p>
+
+<pre>id         :integer          not null, primary key
+user_id    :integer
+title      :string(255)      not null
+body       :text             not null
+privacy_on :boolean          default(FALSE)
+latitude   :decimal(12, 8)   not null
+longitude  :decimal(12, 8)   not null
+altitude   :decimal(12, 8)   default(0.0)
+created_at :datetime
+updated_at :datetime</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-find_near_me" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_near_me</span><span
+            class="method-args">(params, user)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns all the public notes based on given parameters and all of the
+current user&#39;s notes. Search by bounding box (lat, long, range), tags,
+and users is available.</p>
+
+<h3 id="method-c-find_near_me-label-Parameters">Parameters<span><a href="#method-c-find_near_me-label-Parameters">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p><code>user</code> - the requesting user.</p>
+</li><li>
+<p><code>params</code> - a hash that permits a bounding box (lat, long,
+range), tags, and users.</p>
+</li><li>
+<p><code>latitude</code> - the latitude in degrees. Defaults to 0</p>
+</li><li>
+<p><code>longitude</code> - the longitude in degrees. Defaults to 0</p>
+</li><li>
+<p><code>range</code> - the range in degrees. Defaults to 200</p>
+</li><li>
+<p><code>tags</code> - a comma separated list of tags. Defaults to all
+possible tags.</p>
+</li><li>
+<p><code>users</code> - a comma separated list of users. Defaults to all
+possible users.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="find_near_me-source">
+            <pre><span class="ruby-comment"># File app/models/note.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_near_me</span>(<span class="ruby-identifier">params</span>, <span class="ruby-identifier">user</span>)
+  <span class="ruby-identifier">lat</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:latitude</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">long</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:longitude</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">range</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:range</span>] <span class="ruby-operator">||</span> <span class="ruby-value">200</span>
+  <span class="ruby-identifier">us</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:users</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">ts</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:tags</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>
+
+  <span class="ruby-identifier">lat_upr_bound</span> = <span class="ruby-identifier">lat</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-identifier">long_upr_bound</span> = <span class="ruby-identifier">long</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-identifier">lat_lwr_bound</span> = <span class="ruby-identifier">lat</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-identifier">long_lwr_bound</span> = <span class="ruby-identifier">long</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">to_f</span>
+
+  <span class="ruby-identifier">attrs</span> = <span class="ruby-string">&quot;title, latitude, longitude, altitude, id&quot;</span>
+  
+  <span class="ruby-identifier">user_names</span> = <span class="ruby-identifier">us</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;, &quot;</span>)
+  <span class="ruby-identifier">tag_names</span> = <span class="ruby-identifier">ts</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;, &quot;</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">user_names</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-identifier">users</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">where</span>.<span class="ruby-identifier">not</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">users</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_names</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tag_names</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-identifier">tags</span> = <span class="ruby-constant">Tag</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">tags</span> = <span class="ruby-constant">Tag</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">tag_names</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># get all your notes in range</span>
+  <span class="ruby-identifier">notes</span> = <span class="ruby-constant">Note</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">latitude</span><span class="ruby-operator">:</span> <span class="ruby-identifier">lat_lwr_bound</span><span class="ruby-operator">...</span><span class="ruby-identifier">lat_upr_bound</span>,
+                     <span class="ruby-identifier">longitude</span><span class="ruby-operator">:</span> <span class="ruby-identifier">long_lwr_bound</span><span class="ruby-operator">...</span><span class="ruby-identifier">long_upr_bound</span>,
+                     <span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>).<span class="ruby-identifier">select</span>(<span class="ruby-identifier">attrs</span>).<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    (<span class="ruby-identifier">n</span>.<span class="ruby-identifier">tags</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">tags</span>).<span class="ruby-identifier">any?</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># get other people&#39;s non-private notes in range</span>
+  <span class="ruby-identifier">notes</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Note</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">latitude</span><span class="ruby-operator">:</span> <span class="ruby-identifier">lat_lwr_bound</span><span class="ruby-operator">...</span><span class="ruby-identifier">lat_upr_bound</span>,
+                      <span class="ruby-identifier">longitude</span><span class="ruby-operator">:</span> <span class="ruby-identifier">long_lwr_bound</span><span class="ruby-operator">...</span><span class="ruby-identifier">long_upr_bound</span>,
+                      <span class="ruby-identifier">privacy_on</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, 
+                      <span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">users</span>).<span class="ruby-identifier">select</span>(<span class="ruby-identifier">attrs</span>).<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    (<span class="ruby-identifier">n</span>.<span class="ruby-identifier">tags</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">tags</span>).<span class="ruby-identifier">any?</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># TODO add support for friends</span>
+  <span class="ruby-identifier">notes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

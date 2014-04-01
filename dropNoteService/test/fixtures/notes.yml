@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: notes
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  title      :string(255)      not null
+#  body       :text             not null
+#  privacy_on :boolean          default(FALSE)
+#  latitude   :decimal(12, 8)   not null
+#  longitude  :decimal(12, 8)   not null
+#  altitude   :decimal(12, 8)   default(0.0)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

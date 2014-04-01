@@ -1,3 +1,12 @@
+<creation>
+  <type>note</type>
+  <create_url>
+    <%  create = notes_url %>
+    <%  create["localhost"] = @SERVER_IP unless create["localhost"].nil? %>
+    <%  create["127.0.0.1"] = @SERVER_IP unless create["127.0.0.1"].nil? %>
+    <%= create %>
+  </create_url>
+</creation>
 <% @notes.each_with_index do |note, i| %>
   <poi>
     <tags>
@@ -27,11 +36,5 @@
     <update_freq>
       10
     </update_freq>
-    <create_url>
-      <%  create = notes_url %>
-      <%  create["localhost"] = @SERVER_IP unless create["localhost"].nil? %>
-      <%  create["127.0.0.1"] = @SERVER_IP unless create["127.0.0.1"].nil? %>
-      <%= create %>
-    </create_url>
   </poi>
 <% end %>

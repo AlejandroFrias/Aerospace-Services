@@ -1,10 +1,10 @@
 HmcBuildingService::Application.routes.draw do
-  get "building/index"
+  # get "building/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'building#index'
+  root 'buildings#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -13,7 +13,7 @@ HmcBuildingService::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-     resources :building
+     resources :buildings
 
   # Example resource route with options:
   #   resources :products do

@@ -1,5 +1,6 @@
 require 'time'
 
+# The base controller.
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -7,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_format
 
+  # Initializes the API service to only respond with xml
   def set_format
     request.format = 'xml'
   end
