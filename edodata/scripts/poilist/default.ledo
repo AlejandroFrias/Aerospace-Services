@@ -2,13 +2,15 @@
   <declaration>
   
   
-    <var name="building" using="@http://localhost:3000/?#EDOURIPARAMS" />
+    <var name = "building" using="@http://localhost:3000/?#EDOURIPARAMS" />
+    <var name = "note" using = "@http://localhost:3003/?#EDOURIPARAMS" />
 
   </declaration>
   
   <template>
     <array>
       <use var="$building[/array/*]" />
+      <use var = "$note[/array/*]"  />
     </array>
   </template>
 </LEDO>
