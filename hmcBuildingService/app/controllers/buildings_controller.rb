@@ -1,16 +1,31 @@
 require 'net/http'
-# Controller for Building Point of Interest (POI) Service
+# Controller for Building Point of Interest (POI) Service.
+# 
+# Requires username/password (afrias/Aerospace13!) basic HTTP authentication 
+# when editing, creating, or destroying buildings.
 # 
 # === Provided Services
-# * GET request of POI list generation of buildings 
-# * GET request of all available info/external services on individual buildings
+# * POI list generation 
+# => GET http://134.173.43.28:3000/buildings 
+# => search params = tags, latitude, longitude, range
+# * building information: description, menu, class schedule, music play list
+# => GET http://134.173.43.28:3000/buildings/[:id] 
+# => params = time
+# * Create new building POI with given params
+# => POST http://134.173.43.28:3000/buildings
+# => required params = name, description, latitude, longitude
+# => optional params = tags, code, altitude
+# * Edit a building POI
+# => PATCH/PUT http://134.173.43.28:3000/buildings/[:id]
+# => params = name, description, latitude, longitude, tags, code, altitude
+# * Delete a building POI
+# => DESTROY http://134.173.43.28:3000/buildings/[:id]
 # 
 # === TODO: Future Work
 # * Once conditionals are used in the EDO script, we can clean "show" code to just call the EDO service for external info.
 # * Use altitude
 # * Use update_frequency (maybe make it an actual attribute so buildings can have different frequencies)
 class BuildingsController < ApplicationController
-  # Require user/assword authentication when editing, creating, or destroying buildings
   skip_before_action :verify_authenticity_token
   before_action :set_building, only: [:update, :destroy]
   http_basic_authenticate_with name: "afrias", password: "Aerospace13!", except: [:index, :show] 
@@ -77,8 +92,6 @@ class BuildingsController < ApplicationController
       
   end
 
-  # POST /buildings
-  # POST /buildings.json
   # A POST request to the create_url given in the POI List attempts to create a new building.
   # If the required attributes are not specified or the creation fails for any other 
   # reason, an error message is returned. If a new building is successfully created, a
@@ -86,10 +99,10 @@ class BuildingsController < ApplicationController
   # 
   # === Required Attributes (Passed by Parameters)
   # 
-  # * name
-  # * description
-  # * latitude
-  # * longitude
+  # * +name+ - the full name of the building (used for display of POI)
+  # * +description+ - every building has a small, sometime historical, snippet of info
+  # * +latitude+ - the latitude of it's POI location (in degrees)
+  # * +longitude+ - the longitude of it's POI location (in degrees)
   # 
   # === Optional Attributes
   # 
@@ -122,21 +135,20 @@ class BuildingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /buildings/1
-  # PATCH/PUT /buildings/1.json
+
   # A PATCH or PUT request to the given URL (in udpate_url attribute of POI), will 
   # attempt to modify the specified building and give a success or error response if it
   # works.
   # 
   # === Modifiable Attributes (Passed by Parameters)
   # 
-  # * name
-  # * description
-  # * code
-  # * latitude
-  # * longitude
-  # * altitude
-  # * tags - a comma separated list of description tags, will replace all tags (other than "building" tag)
+  # * +name+ - the full name of the building (used for display of POI)
+  # * +description+ - every building has a small, sometime historical, snippet of info
+  # * +code+ - a all caps building code (e.g. SHAN)
+  # * +latitude+ - the latitude of it's POI location (in degrees)
+  # * +longitude+ - the longitude of it's POI location (in degrees)
+  # * +altitude+ - the altitude of the POI in degrees
+  # * +tags+ - a comma separated list of description tags, will replace all tags (other than "building" tag)
   # 
   def update
     if @building.update(update_params)
@@ -156,8 +168,6 @@ class BuildingsController < ApplicationController
     end
   end
 
-  # DELETE /buildings/1
-  # DELETE /buildings/1.json
   # A DELETE request sent to the same URL (update_url) will attempt to destroy the 
   # building. Responds with a success or error message if it works or not. In this
   # case the only way for it not to work is if the authentication fails, in which
