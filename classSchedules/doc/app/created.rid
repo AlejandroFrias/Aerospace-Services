@@ -1,0 +1,7 @@
+Thu, 27 Mar 2014 02:13:20 -0700
+README.rdoc	Thu, 27 Feb 2014 10:54:44 -0800
+app/controllers/application_controller.rb	Thu, 27 Mar 2014 02:11:00 -0700
+app/controllers/course_controller.rb	Thu, 27 Mar 2014 02:12:55 -0700
+app/helpers/application_helper.rb	Thu, 27 Feb 2014 10:54:44 -0800
+app/helpers/course_helper.rb	Thu, 27 Feb 2014 10:54:44 -0800
+app/models/course_entry.rb	Thu, 27 Mar 2014 00:11:17 -0700

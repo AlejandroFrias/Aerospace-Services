@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class Menu - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/menu.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-find_menu_at_time_and_building">::find_menu_at_time_and_building</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Meal.html">Meal</a>
+  
+    <li><a href="./Menu.html">Menu</a>
+  
+    <li><a href="./MenuController.html">MenuController</a>
+  
+    <li><a href="./MenuHelper.html">MenuHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Menu</h1>
+
+  <div id="description" class="description">
+    
+<h2 id="label-Schema+Information">Schema Information</h2>
+
+<p>The <a href="Menu.html">Menu</a> model provides the data seen below in the
+schema as well as as many meals.</p>
+
+<p>Table name: menus</p>
+
+<pre>id         :integer          not null, primary key
+school     :string(255)
+meal_type  :string(255)
+day        :string(255)
+start      :string(255)
+end        :string(255)
+created_at :datetime
+updated_at :datetime</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-find_menu_at_time_and_building" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_menu_at_time_and_building</span><span
+            class="method-args">(time, dining_hall)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds next upcoming menu from the given time at the given school&#39;s
+dining hall</p>
+
+<h3 id="method-c-find_menu_at_time_and_building-label-Parameters">Parameters</h3>
+<ul><li>
+<p><code>time</code> - a time that can be parsed by by class Time. If it
+can&#39;t be parsed, it is rescued and uses the current time.</p>
+</li><li>
+<p><code>dining_hall</code> - an all caps dining hall building code (e.g.
+“HOCH”)</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="find_menu_at_time_and_building-source">
+            <pre><span class="ruby-comment"># File app/models/menu.rb, line 26</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_menu_at_time_and_building</span>(<span class="ruby-identifier">time</span>, <span class="ruby-identifier">dining_hall</span>)
+      <span class="ruby-identifier">days</span> = [<span class="ruby-string">&quot;sun&quot;</span>, <span class="ruby-string">&quot;mon&quot;</span>, <span class="ruby-string">&quot;tue&quot;</span>, <span class="ruby-string">&quot;wed&quot;</span>, <span class="ruby-string">&quot;thu&quot;</span>, <span class="ruby-string">&quot;fri&quot;</span>, <span class="ruby-string">&quot;sat&quot;</span>]
+      <span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">time</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+      <span class="ruby-identifier">day</span> = <span class="ruby-identifier">days</span>[<span class="ruby-identifier">t</span>.<span class="ruby-identifier">wday</span>]
+      <span class="ruby-identifier">time_num</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">hour</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">rjust</span>(<span class="ruby-value">2</span>,<span class="ruby-string">&quot;0&quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">min</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">rjust</span>(<span class="ruby-value">2</span>,<span class="ruby-string">&quot;0&quot;</span>)
+
+      <span class="ruby-comment"># m =  Menu.where(&#39;(day = ?) AND (? BETWEEN start AND end) AND (school = ?) &#39;,</span>
+      <span class="ruby-comment">#       day, time_num, dining_hall).first</span>
+      <span class="ruby-identifier">attrs</span> = <span class="ruby-string">&quot;id, meal_type, day, start, end&quot;</span>
+      <span class="ruby-identifier">menus</span> = <span class="ruby-constant">Menu</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&#39;(day = ?) AND (school = ?) &#39;</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">dining_hall</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;start DESC&#39;</span>).<span class="ruby-identifier">select</span>(<span class="ruby-identifier">attrs</span>)
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">menus</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">menus</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">result</span> = <span class="ruby-identifier">m</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">time_num</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_menu_at_time_and_building-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_menu_at_time_and_building-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

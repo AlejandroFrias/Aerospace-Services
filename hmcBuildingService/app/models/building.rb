@@ -1,3 +1,6 @@
+# A building Point of Interest (POI). Every building has a name and description. 
+# Certain buildings have other services available, like menus of dining halls.
+# 
 # == Schema Information
 #
 # Table name: buildings
@@ -6,27 +9,26 @@
 #  latitude    :decimal(12, 8)   not null
 #  longitude   :decimal(12, 8)   not null
 #  altitude    :decimal(12, 8)   default(0.0)
-#  name        :string(255)
+#  name        :string(255)      not null
+#  description :text             not null
 #  code        :string(255)      default("NONE")
-#  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
 #
-
 class Building < ActiveRecord::Base
   has_many :taggings
   has_many :tags, :through => :taggings
 
-  # Finds all the buildings within a desired bounding box with desired tags.
-  # The defaults when not given certain parameters are:
-  #      latitude = 0
-  #     longitude = 0
-  #         range = 200
-  #          tags = Tag.all
+  # Finds all the buildings within a desired bounding box and that contain at 
+  # least one of the given tags.
   #
-  # === Attributes
+  # === Parameters
   #
-  # * +params+ - a hash that permits lat, long, range, and tags
+  # * +params+ - a hash that permits a bounding box (lat, long, range) and tags.
+  # * +params\[:latitude\]+ - the latitude in degrees. Defaults to 0
+  # * +params\[:longitude\]+ - the longitude in degrees. Defaults to 0
+  # * +params\[:range\]+ - the range in degrees. Defaults to 200
+  # * +params\[:tags\]+ - a comma separated list of tags. Defaults to all possible tags.
   # 
   def self.find_near_me(params)
     lat = params[:latitude] || 0
