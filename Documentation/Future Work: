@@ -1,0 +1,21 @@
+Future Work:
+
+  * Altitude
+  * Update Frequency
+  * Private vs Public Notes
+  * Events Service (time dependent/unviewable after time T)
+  * EDO conditionals
+  * Client side editing/deleting of notes
+  * Friends for notes (sending notes)
+  * Client side pre-storing poi's (maybe based on motion of user)
+  * POI's that change position over time (possibly to test with notes). This will work best using the update_url as a unique id across services to identify a changed POI as the same one and not a modified one.
+  * Using the update_url as a unique id for efficient updating of POI list
+  * Changeable range of view (settings option)
+  * Optional viewer modes (currently different users will see different notes, but it would be cool if different users had different services available too. would need many more services and user stories)
+  * Adding new buildings/notes (in-progress)
+  * Directions (path on the floor or on a map)
+  * Documenting the client's code
+  * Update strategy for creating new poi's or modifying or deleting in O(N)
+   - Hash table of POI's with 
+
+

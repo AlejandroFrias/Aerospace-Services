@@ -25,10 +25,10 @@ class Building < ActiveRecord::Base
   # === Parameters
   #
   # * +params+ - a hash that permits a bounding box (lat, long, range) and tags.
-  # * +params\[:latitude\]+ - the latitude in degrees. Defaults to 0
-  # * +params\[:longitude\]+ - the longitude in degrees. Defaults to 0
-  # * +params\[:range\]+ - the range in degrees. Defaults to 200
-  # * +params\[:tags\]+ - a comma separated list of tags. Defaults to all possible tags.
+  # * +latitude+ - the latitude in degrees. Defaults to 0
+  # * +longitude+ - the longitude in degrees. Defaults to 0
+  # * +range+ - the range in degrees. Defaults to 200
+  # * +tags+ - a comma separated list of tags. Defaults to all possible tags.
   # 
   def self.find_near_me(params)
     lat = params[:latitude] || 0
