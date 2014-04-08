@@ -16,6 +16,7 @@ Future Work:
   * Directions (path on the floor or on a map)
   * Documenting the client's code
   * Update strategy for creating new poi's or modifying or deleting in O(N)
-   - Hash table of POI's with 
+  * Use search by Tag
+
 
 
