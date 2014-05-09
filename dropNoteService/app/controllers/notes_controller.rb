@@ -12,11 +12,11 @@
 # => GET GET http://134.173.43.28:3003/notes/[:id]
 # * Create new Note with given params
 # => POST http://134.173.43.28:3000/notes
-# => required params = title, body, latitude, longitude
+# => required params = name, body, latitude, longitude
 # => optional params = tags, privacy_on, altitude
 # * Edit a Note
 # => PATCH/PUT http://134.173.43.28:3000/buildings/[:id]
-# => params = title, body, latitude, longitude, tags, privacy_on, altitude
+# => params = name, body, latitude, longitude, tags, privacy_on, altitude
 # * Delete a Note
 # => DESTROY http://134.173.43.28:3000/notes/[:id]
 class NotesController < ApplicationController
@@ -40,7 +40,7 @@ class NotesController < ApplicationController
 
   # GET all the info on the desired note (by id). The URL is given in the list of POI's.
   def show
-    attrs = "title, body, latitude, longitude, altitude, privacy_on, updated_at, user_id, id"
+    attrs = "name, body, latitude, longitude, altitude, privacy_on, updated_at, user_id, id"
     @note = Note.where(id: params[:id]).select(attrs).first
   end
 
@@ -51,7 +51,7 @@ class NotesController < ApplicationController
   # 
   # === Required Attributes for Creation (Passed by Parameters)
   # 
-  # * +title+ - the title of the note
+  # * +name+ - the name of the note
   # * +body+ - the text of the note
   # * +latitude+ - the latitude of the note's position
   # * +longitude+ - the longitude of the note's position
@@ -79,7 +79,7 @@ class NotesController < ApplicationController
         render :file => "#{Rails.root}/public/error", :layout => false
       end
     else
-      @notice = "Invalid variables. Requires title, body, latitude, longitude. Permits altitude, tags as well."
+      @notice = "Invalid variables. Requires name, body, latitude, longitude. Permits altitude, tags as well."
       render :file => "#{Rails.root}/public/error", :layout => false
     end
   end
@@ -90,7 +90,7 @@ class NotesController < ApplicationController
   # 
   # === Modifiable Attributes (Passed by Parameters)
   # 
-  # * +title+ - the title of the note
+  # * +name+ - the name of the note
   # * +body+ - the text of the note
   # * +privacy_on+ - a boolean for the privacy setting
   # * +latitude+ - the latitude of the note's position
@@ -141,15 +141,15 @@ class NotesController < ApplicationController
 
     # White list permitted parameters for updating a note with
     def update_note_params
-      params.permit(:title, :body, :privacy_on, :latitude, :longitude, :altitude)
+      params.permit(:name, :body, :privacy_on, :latitude, :longitude, :altitude)
     end
 
     
     # White list permitted parameters for creating a note with
     # Returns false if required params are not present
     def create_note_params
-      p = params.permit(:title, :body, :privacy_on, :latitude, :longitude, :altitude)
-      if p[:title].nil? or p[:body].nil? or p[:latitude].nil? or p[:longitude].nil?
+      p = params.permit(:name, :body, :privacy_on, :latitude, :longitude, :altitude)
+      if p[:name].nil? or p[:body].nil? or p[:latitude].nil? or p[:longitude].nil?
         return false
       else
         return p

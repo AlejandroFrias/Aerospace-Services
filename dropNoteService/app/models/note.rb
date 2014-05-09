@@ -1,6 +1,6 @@
 # == Purpose
 #
-# Notes belong to a single user and can have many tags. A note is simply a title and text. 
+# Notes belong to a single user and can have many tags. A note is simply a name and text. 
 # 
 # == Schema Information
 #
@@ -8,7 +8,7 @@
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
-#  title      :string(255)      not null
+#  name      :string(255)      not null
 #  body       :text             not null
 #  privacy_on :boolean          default(FALSE)
 #  latitude   :decimal(12, 8)   not null
@@ -47,7 +47,7 @@ class Note < ActiveRecord::Base
     lat_lwr_bound = lat.to_f - range.to_f
     long_lwr_bound = long.to_f - range.to_f
 
-    attrs = "title, latitude, longitude, altitude, id"
+    attrs = "name, latitude, longitude, altitude, id"
     
     user_names = us.split(", ")
     tag_names = ts.split(", ")

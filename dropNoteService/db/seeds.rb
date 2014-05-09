@@ -13,9 +13,9 @@ t1 = Tag.create(name: "note")
 t2 = Tag.create(name: "test")
 # t3 = Tag.create(name: "third")
 
-n1 = Note.create(title: "Hello World", body: "This is a test note.", latitude: 34.106083, longitude: -117.711717, altitude: 0)
-# n2 = Note.create(title: "Test 2", body: "Another Test Note", latitude: 34.106083, longitude: -117.711717, altitude: 0)
-# n3 = Note.create(title: "Third Test", body: "Not the Fourth.", latitude: 34.106083, longitude: -117.711717, altitude: 0)
+n1 = Note.create(name: "Hello World", body: "This is a test note.", latitude: 34.106083, longitude: -117.711717, altitude: 0)
+# n2 = Note.create(name: "Test 2", body: "Another Test Note", latitude: 34.106083, longitude: -117.711717, altitude: 0)
+# n3 = Note.create(name: "Third Test", body: "Not the Fourth.", latitude: 34.106083, longitude: -117.711717, altitude: 0)
 
 
 n1.tags.concat(t1)
@@ -34,5 +34,5 @@ u1.notes.concat(n1)
 # u2.notes.concat(n3)
 
 # t = Tag.create(name: "note")
-# n = Note.create(title: "Hello World", body: "This is a test note.", latitude: 34.106083, longitude: -117.711717, altitude: 0)
+# n = Note.create(name: "Hello World", body: "This is a test note.", latitude: 34.106083, longitude: -117.711717, altitude: 0)
 

@@ -1,14 +1,13 @@
 <LEDO>
-	<declaration>
-	
-	
-		<var name="mudd" using="@http://localhost:3000/?#EDOURIPARAMS" /> 
-
-	</declaration>
-	
-	<template>
-
-			$mudd
-
-	</template>
-</LEDO>
+        <declaration>
+                <var name="gadgetInfo" using="@ http://www.w3schools.com/xml/simple.xml" />
+        </declaration>
+       
+        <template>
+                <sv>
+                        <gadget>
+                                <use var="$gadgetInfo" />
+                        </gadget>
+                </sv>
+        </template>
+</LEDO> 

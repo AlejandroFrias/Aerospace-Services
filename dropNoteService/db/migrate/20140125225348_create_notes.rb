@@ -3,7 +3,7 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.belongs_to :user
       t.integer :user_id
-      t.string :title, :null => false
+      t.string :name, :null => false
       t.text :body, :null => false
       t.boolean :privacy_on, :default => false
       t.decimal :latitude, :precision => 12, :scale => 8, :null => false

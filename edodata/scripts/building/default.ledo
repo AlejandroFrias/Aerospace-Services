@@ -2,7 +2,7 @@
   <declaration>
   
   
-    <var name="course" using="@http://localhost:3001/?#EDOURIPARAMS" /> 
+    <var name="course" using="@http://134.173.43.28:3001/?#EDOURIPARAMS" /> 
 
   </declaration>
   
