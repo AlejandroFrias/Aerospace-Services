@@ -1,21 +1,49 @@
+
+
 Future Work:
 
-  * Altitude
-  * Update Frequency
+
+
+  * Altitude of Point of Interests
+
+As part of our simplifying assumption, we assumed a flat world and all points of interests existing at the same level. This is not an accurate picture of the world however. Though it is theoretically simple to change the altitude in the coordinate transformation, getting accurate altitude information of the user and of other things is difficult. There are some services available for finding the altitude of ground level at a certain GPS location that would need to be looked into.
+
+  * Update Frequency and Strategy
+
+Though our project doesn't do this yet, we suggest the following strategy for updating the POI list and individual POI's, since these things can change. Each POI comes with a recommended minimum frequency at which to update it. As long as a POI is being viewed, the information should be updated at that frequency. Also, when just walking around, if the suggested amount of time between updates has elapsed since the last update call to the overall POI list, an update should be made. This will allow the user to see new POI's appear even without moving. Currently the overall POI list is updated along with the user's position, so at 60 Hz. Ideally it would only be updated if the user has moved significantly enough to have a new viewable area or if the update frequency time has elapsed.
+
   * Private vs Public Notes
+
+It was not crucial to our overall goals of testing the use EDO and tackling the challenged of augmented reality, so we did not fully implement all the features we planned regarding notes. Right now all notes are created public, so that if any user desires to see other user's notes, they can. The back-end supports having private notes, but the client end does not yet. It would be a trivial matter to add such functionality, but these kinds of features are social media tasks rather than augmented reality tasks. Similar features along these lines are allowing the viewing of your friends' notes and different levels of access for editing and deleting of notes and adding comment sections. It could even be linked with a social media site like Facebook.
+
   * Events Service (time dependent/unviewable after time T)
+
+Another service that provides Points of Interests was calendar events. Parsing standard calendar RSS feeds, like Google Calendars, wouldn't be too difficult and could even be done inside of an EDO script, thereby not requiring any intermediate service to be fabricated. Events would introduce a time dependent POI that is very interactive, allowing a user to walk by a place, see an event is going to happen that night and RSVP to it on the fly. Given more time on this project, this would be the next service to incorporate.
+
   * EDO conditionals
+
+Right now, when a building POI is tapped for extra information, the building service we fabricated runs through some conditional code to figure which EDO script to run based on the type of building. If the building has a playlist and a menu, then it runs the EDO script that composes those two services, for example. This is not scalable since we'd need a separate EDO script for each combination of building types. EDO supports conditional code, so in order to clean up the back-end services and make them scalable, we'd ideally use EDO conditional code.
+
   * Client side editing/deleting of notes
-  * Friends for notes (sending notes)
+
+The drop-a-note service accepts for PATCH and DESTROY HTTP requests to a note's given URL from the user who created the note in order to modify or delete it. Adding the proper forms and user interface did not still need to be implemented.
+
   * Client side pre-storing poi's (maybe based on motion of user)
-  * POI's that change position over time (possibly to test with notes). This will work best using the update_url as a unique id across services to identify a changed POI as the same one and not a modified one.
-  * Using the update_url as a unique id for efficient updating of POI list
-  * Changeable range of view (settings option)
-  * Optional viewer modes (currently different users will see different notes, but it would be cool if different users had different services available too. would need many more services and user stories)
-  * Adding new buildings/notes (in-progress)
-  * Directions (path on the floor or on a map)
-  * Documenting the client's code
-  * Update strategy for creating new poi's or modifying or deleting in O(N)
-   - Hash table of POI's with 
 
+One use case we did not deem necessary to test was a user who is moving a lot. The iPad's location manager gives us the velocity alongside GPS location. A more advanced version of this app could predict where the user is going and pre-load POI's in that area. The services we have allows for this behavior since they don't store any client side information, leaving them flexible for just these kinds of use cases.
 
+  * POI's Changing Location Over Time
+
+Currently we have not dealt with or handled POI's whose position can change over time. Each POI does ahve a unique identifier, namely it's update URL, so keeping track of POI's as they change would still be possible. If the other update strategies mentioned above are implemented, handling of such POI's will come with it. Notably, the drop-a-note service can be used to test and simulate a moving POI such as a person walking around.
+
+  * Changeable Range of View
+
+Another possible feature that mostly just needs an intuitive GUI is the ability for the client to dictate the range in which PIO's are visible, possibly in a settings panel. It is simple enough to get POI's from a large range and then only display the ones the user cares about. This is one possible solution to overcrowding, i.e. when there are too many POI's to display nicely.
+
+  * Filtering POI's by Tag
+
+Each POI has a number of tags that describe the type of POI it is and what kinds of information are held by them. Implementing a simple filtering system would be mostly trivial at this point that allows the user to select out of the showing tags, which ones are should be visible. This is our other main solution to the overcrowding problem.
+
+  * Optional Viewer Modes 
+
+Currently different users will have access to different notes. Specifically they can only see their own notes and other people's public notes. Branching out to other user stories, we would like to explore limiting what services are available based on who the user. A system administrator might see Cisco network data where as a fireman might see building's floor plans. In conjunction with this, a single user could elect to have different modes of viewing, such as an emergency mode that ensures frequent updating and ignores all but essential services for speed up. Many more services would need to be made before exploring this interesting use case.
